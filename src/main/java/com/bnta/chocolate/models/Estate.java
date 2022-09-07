@@ -7,18 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+@Entity(name = "Estates")
 public class Estate {
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     private String name;
 
 
     private String country;
 
+    @OneToMany(mappedBy = "estate")
+    ///// was Estate
 
     private List<Chocolate> chocolates;
 
